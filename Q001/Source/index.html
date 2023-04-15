@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>JQuery Exam</title>
+</head>
+<body>
+    <label for="color1" id="color1"></label>
+    <input type="checkbox" name="color1"> Red
+    <input type="checkbox" name="color1"> Green
+    <input type="checkbox" name="color1"> Blue
+    <input type="checkbox" name="color1"> Black
+    <br><br>
+    <label for="color" id="color"></label>
+    <input type="radio" name="color"> Red
+    <input type="radio" name="color"> Green
+    <input type="radio" name="color"> Blue
+    <input type="radio" name="color"> Black
+    <p id="con"></p>
+</body>
+<script>
+    $(function() {
+        $('#color1').change(function(){
+            var a = this.val()
+            console.log(a)
+        })
+    })
+</script>
+</html>

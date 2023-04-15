@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>JQuery Exam</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+        thead, tr, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Invoice Bill</td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+</body>
+<script>
+    var userCartDetails = {
+
+        "userName": "Varsha Oberoi",
+
+        "Phone": 5794894644,
+
+        "Address": "Ahmedabad",
+
+        "cartList": [{ "productName": "Apple", "price": 150, "discount": "12.5%", "GST": "5%"}, { "productName": "Banana", "price": 85, "discount": 7.3 %, "GST": 3.2 %}]
+
+    }
+
+    $(function() {
+        $(userCartDetails).each((index, data) => {
+            var row = $('<tr></tr>')
+            $("<td></td>").text(data.userName).appendTo($(row))
+            $("<td></td>").text(data.Phone).appendTo($(row))
+            $("<td></td>").text(data.Address).appendTo($(row))
+            var show = userCartDetails.keys(data.cartList)
+        })
+        $("#tbody").append(row)
+    })
+
+</script>
+
+</html>

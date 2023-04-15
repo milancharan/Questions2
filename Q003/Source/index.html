@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Exam</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <form action="/" id="form">
+        <label for="fName">First Name</label>
+        <input type="text" id="fName"><br><br>
+        <label for="lName">Last Name</label>
+        <input type="text" id="fName"><br><br>
+        <label for="dob">DOB</label>
+        <input type="date" id="date"><br><br>
+        <label for="state">State</label>
+        <select name="state" id="state">
+            <option value="Select">Select</option>
+            <option value="Gujrat">Gujrat</option>
+            <option value="Maharashtra">Maharashtra</option>
+        </select><br><br>
+        <label for="city">City</label>
+        <select name="city" id="city1">
+            <option value="Surat">Surat</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Baroda">Baroda</option>
+        </select>
+        <select name="city" id="city2">
+            <option value="Mumbai">Mumbai</option>
+            <option value="Thane">Thane</option>
+        </select><br><br>
+        <button>Submit</button>
+    </form>
+</body>
+<script>
+    $(function () {
+        $("#city1").hide()
+        $("#city2").hide()
+        $("select").on("change", function () {
+            var sel = $(this).val()
+            if (sel == "Gujrat") {
+                $("#city1").show()
+                $("#city2").hide()
+            }
+            else if (sel == "Maharashtra") {
+                $("#city1").hide()
+                $("#city2").show()
+
+            }
+            else if (sel == "Select") {
+                $("#city1").hide()
+                $("#city2").hide()
+
+            }
+        })
+        $("button").on('click', function () {
+            var fName = $('#fName')
+            var lName = $('#lName')
+            var date = $('#date')
+
+            var fNameVal = $('#fName').val()
+            var lNameVal = $('#lName').val()
+            var dateVal = $('#date').val()
+
+            if (fName.text() == '') {
+                alert("Enter First Name")
+            } else (fNameVal)
+            if (lName.text() == '') {
+                alert("Enter Last Name")
+            }
+            if (date.text() == '') {
+                alert("Enter Date of Birth")
+            }
+        })
+    })
+</script>
+
+</html>
